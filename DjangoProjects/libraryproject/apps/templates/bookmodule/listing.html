@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Listing (nested) Example {% endblock %}
+
+{% block content %}
+    <h1 class="listing-title">Example of lists (nested)</h1>
+    <ul>
+        <li>Books
+            <ul>
+                <li>Programming</li>
+                <li>Web Development</li>
+            </ul>
+        </li>
+        <li>Magazines
+            <ul>
+                <li>Technology</li>
+                <li>Science</li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}

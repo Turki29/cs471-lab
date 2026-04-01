@@ -15,8 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+import apps.bookmodule.views
+import apps.usermodule.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('books/', include('apps.bookmodule.urls'), name='books'),
+    # path('age/<int:age>/',
+    # # هنا أنت تحدد اسم المسار      
+    # # والمتغير في المسار لازم يطابق اسمه في الدالة المعطاة للمسار
+    # apps.bookmodule.views.index2,
+    # # هذه هي الدالة المعطاة للمسار
+    # name='age'), 
+    # اسمه مب مهم هنا
+    path('users/', include('apps.usermodule.urls'), name='users')
+    
 ]
