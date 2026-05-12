@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% block title %} Publishers — Filtered Book Count {% endblock title %}
+{% block content %}
+    <h1>Book Count per Publisher (price > 50, quantity < 5, rating ≥ 1)</h1>
+    <table cellpadding="8" border="1">
+        <thead>
+            <tr><th>Publisher</th><th>Matching Books</th></tr>
+        </thead>
+        <tbody>
+            {% for p in publishers %}
+                <tr>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.filtered_count|default:0 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% block title %} Publishers — Oldest Book {% endblock title %}
+{% block content %}
+    <h1>Oldest Book per Publisher</h1>
+    <table cellpadding="8" border="1">
+        <thead>
+            <tr><th>Publisher</th><th>Oldest Book Date</th></tr>
+        </thead>
+        <tbody>
+            {% for p in publishers %}
+                <tr>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.oldest_book|default:"—" }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

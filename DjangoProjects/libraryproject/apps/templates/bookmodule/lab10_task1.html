@@ -1,0 +1,45 @@
+<div margin="20px">
+
+    <button>
+        <a href="{% url 'bookmodule:books.add' %}">Add Book</a>
+    </button>
+
+    <table>
+        <caption>Books </caption>
+        <tr>
+            <td>Title</td>
+            <td>Author</td>
+
+        </tr>
+
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>
+
+            </td>
+            <td>
+                <form action="{% url 'bookmodule:books.delete' book.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+            <td>
+
+                <button>
+                    <a href="{% url 'bookmodule:books.edit' book.id %}">
+                        Edit
+                    </a>
+                </button>
+
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No books found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>

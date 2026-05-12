@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% block title %} Books — Availability {% endblock title %}
+{% block content %}
+    <h1>Books with Availability Percentage</h1>
+    <table cellpadding="8" border="1">
+        <thead>
+            <tr><th>Title</th><th>Quantity</th><th>Availability %</th></tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.quantity }}</td>
+                    <td>{{ book.percentage|floatformat:2 }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

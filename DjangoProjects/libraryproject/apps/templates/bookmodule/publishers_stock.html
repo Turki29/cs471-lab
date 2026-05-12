@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% block title %} Publishers — Total Stock {% endblock title %}
+{% block content %}
+    <h1>Publishers and Their Total Book Stock</h1>
+    <table cellpadding="8" border="1">
+        <thead>
+            <tr><th>Publisher</th><th>Total Stock</th></tr>
+        </thead>
+        <tbody>
+            {% for p in publishers %}
+                <tr>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.total_stock|default:0 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

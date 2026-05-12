@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sample-tables</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px 32px 40px;
+      background: #ffffff;
+      color: #111;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .page {
+      width: 980px;
+      margin: 0 auto;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    table {
+      border-collapse: collapse;
+      color: #111;
+    }
+
+    .simple-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 4px;
+      margin-bottom: 18px;
+    }
+
+    .simple caption {
+      caption-side: top;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 2px;
+    }
+
+    .simple th,
+    .simple td {
+      border: 1px solid #666;
+      padding: 3px 10px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .simple th {
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .simple .total-label {
+      font-weight: 700;
+    }
+
+    .complex {
+      width: 865px;
+      margin: 0 auto;
+    }
+
+    .complex td,
+    .complex th {
+      border: 1px solid #666;
+      padding: 5px 10px;
+      font-size: 18px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .complex .image-cell {
+      width: 300px;
+      padding: 0;
+      vertical-align: top;
+    }
+
+    .complex .image-holder {
+      padding: 20px 18px 4px;
+    }
+
+    .complex .image-holder img {
+      width: 244px;
+      height: 170px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .complex .top-title {
+      height: 126px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .complex .headings th {
+      height: 92px;
+      font-size: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .complex .animal {
+      font-size: 20px;
+      font-weight: 700;
+      padding: 2px 8px;
+      line-height: 1.05;
+    }
+
+    .complex .narrow {
+      width: 118px;
+    }
+
+    .complex .region {
+      width: 234px;
+    }
+
+    .complex .spits {
+      width: 90px;
+    }
+
+    .complex .wool {
+      width: 140px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="simple-wrap">
+      <table class="simple">
+        <caption>Table 1: Table<br>of Fruits and<br>Their Prices</caption>
+        <thead>
+          <tr>
+            <th>Fruit</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Apple</td><td>$0.25</td></tr>
+          <tr><td>Orange</td><td>$0.50</td></tr>
+          <tr><td>Banana</td><td>$1.00</td></tr>
+          <tr><td>Pineapple</td><td>$2.00</td></tr>
+          <tr><td class="total-label">Total</td><td>$3.75</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caption">Table 2: A more complex sample table</div>
+
+    <table class="complex">
+      <tr>
+        <td class="image-cell" rowspan="2">
+          <div class="image-holder">
+            <img src="{% static 'book1.png' %}" alt="Desert dunes" width="244" height="170" loading="lazy">
+          </div>
+        </td>
+        <td class="top-title" colspan="4">Camelid comparison<br>Approximate as of 6/2011</td>
+      </tr>
+      <tr class="headings">
+        <th class="narrow"># of humps</th>
+        <th class="region">Indigenous region</th>
+        <th class="spits">Spits?</th>
+        <th class="wool">Produces wool?</th>
+      </tr>
+      <tr>
+        <td class="animal">Dromedary</td>
+        <td>1</td>
+        <td>Arabian Peninsula</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td class="animal">Camels (bactrian)</td>
+        <td>2</td>
+        <td>Africa/Asia</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td class="animal">Llamas</td>
+        <td>1</td>
+        <td>Andes Mountains</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

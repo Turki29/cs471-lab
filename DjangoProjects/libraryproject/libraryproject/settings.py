@@ -28,7 +28,11 @@ SECRET_KEY = 'django-insecure-bb+)5fhok#c#s(%xppy6qm=ydl%lapp0n^q9ouh8tpvts+9qaj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '192.168.100.27',
+]
 
 
 # Application definition
@@ -40,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.bookmodule',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +116,11 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = TrueALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '192.168.100.27',
+]
 
 
 # Static files (CSS, JavaScript, Images)

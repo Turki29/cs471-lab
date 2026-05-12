@@ -1,0 +1,51 @@
+<h2>Add Book</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Title:</label>
+    <input type="text" name="title">
+
+    <br><br>
+
+    <label>Price:</label>
+    <input type="number" step="0.01" name="price">
+
+    <br><br>
+
+    <label>Quantity:</label>
+    <input type="number" name="quantity">
+
+    <br><br>
+
+    <label>Publication Date:</label>
+    <input type="date" name="pubdate">
+
+    <br><br>
+
+    <label>Rating:</label>
+    <input type="number" name="rating" min="1" max="10">
+
+    <br><br>
+
+    <label>Publisher:</label>
+    <select name="publisher">
+        <option value="">Select publisher</option>
+        {% for publisher in publishers %}
+            <option value="{{ publisher.id }}">{{ publisher }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <label>Authors:</label>
+    <select name="authors" multiple>
+        {% for author in authors %}
+            <option value="{{ author.id }}">{{ author }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button type="submit">Save</button>
+</form>
